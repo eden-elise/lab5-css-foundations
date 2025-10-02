@@ -1,0 +1,25 @@
+body {
+
+}
+#login-form {
+    background-color:white;
+}
+
+#login-info {
+    background-color: dodgerblue;
+}
+
+h1 {
+    color: black;
+    font-size: 4rem;
+    text-align: left;
+}
+
+form-field {
+    display: block;
+}
+
+p {
+    font-family: serif;
+    font-size: 20px;
+}

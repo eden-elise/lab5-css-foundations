@@ -8,21 +8,26 @@
 </head>
 <body>
 <!-- Eden Tripp - Lab 5 -->
+<section class="login-info">
     <h1>Super Ai Dash</h1>
         <p>
             Ai powered finance from Pes, alt-coins, and fiat currency,
             we promise you won't lose <span>all</span> of
             it.
         </p>
+</section>
+<section id="login-form">
     <form action="login.php" method="post"> <!-- mostly gonna chose post -->
         <form-field>
             <label for="emailField" >Email address</label>
-            <input type="email" name="email" id="emailField" placeholder="you@example.com">
+            <input type="email" name="email" id="emailField"
+                   placeholder="you@example.com" autofocus required>
         </form-field>
 
         <form-field>
             <label for="passwordField">Password</label>
-            <input type="password" name="password" id="passwordField" placeholder="Enter your password">
+            <input type="password" name="password" id="passwordField"
+                   placeholder="Enter your password" required>
         </form-field>
 
         <form-field>
@@ -31,8 +36,10 @@
             </button>
         </form-field>
 
-
-        <a href="forgot.php">Forgot Password</a>
+        <password-recovery>
+            <a href="forgot.php">Forgot Password</a>
+        </password-recovery>
     </form>
+</section>
 </body>
 </html>
