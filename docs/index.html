@@ -9,39 +9,40 @@
 <body>
 <!-- Eden Tripp - Lab 5 -->
 <main class="grid-container">
-<section class="login-info" >
-    <h1>Super Ai Dash</h1>
-        <p>
-            Ai powered finance from Pes, alt-coins, and fiat currency,
-            we promise you won't lose <span>all</span> of
-            it.
-        </p>
-</section>
-<section id="login-form">
-    <form action="login.php" method="post"> <!-- mostly gonna chose post -->
-        <form-field>
-            <label for="emailField" >Email address</label>
-            <input type="email" name="email" id="emailField"
-                   placeholder="you@example.com" autofocus required>
-        </form-field>
+    <section id="login-info" >
+        <h1>Super Ai Dash</h1>
+            <p>
+                Ai powered finance from Pes, alt-coins, and fiat currency,
+                we promise you won't lose <span>all</span> of
+                it.
+            </p>
+    </section>
+    <section id="login-form">
+        <form action="login.php" method="post"> <!-- mostly gonna chose post -->
+            <form-field>
+                <label for="emailField" >Email address</label>
+                <input type="email" name="email" id="emailField"
+                       placeholder="you@example.com" autofocus required>
+            </form-field>
 
-        <form-field>
-            <label for="passwordField">Password</label>
-            <input type="password" name="password" id="passwordField"
-                   placeholder="Enter your password" required>
-        </form-field>
+            <form-field>
+                <label for="passwordField">Password</label>
+                <input type="password" name="password" id="passwordField"
+                       placeholder="Enter your password" required>
+            </form-field>
 
-        <form-field>
-            <button type="submit">
-                Sign In
-            </button>
-        </form-field>
-
-        <password-recovery>
-            <a href="forgot.php">Forgot Password</a>
-        </password-recovery>
-    </form>
-</section>
+            <form-field>
+                <button type="submit">
+                    Sign In
+                </button>
+                <password-recovery>
+                    <a href="forgot.php">
+                        Forgot Password?
+                    </a>
+                </password-recovery>
+            </form-field>
+        </form>
+    </section>
 </main>
 </body>
 </html>

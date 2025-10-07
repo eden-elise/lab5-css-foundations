@@ -1,15 +1,12 @@
-/* CSS Reset inspo from https://www.joshwcomeau.com/css/custom-css-reset/ */
-/* 1. Use a more-intuitive box-sizing model */
+/* CSS Reset inspired by https://www.joshwcomeau.com/css/custom-css-reset/ */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
 * {
     margin: 0;
 }
 
-/* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
     html {
         interpolate-size: allow-keywords;
@@ -17,29 +14,23 @@
 }
 
 body {
-    /* 4. Add accessible line-height */
     line-height: 1.5;
-    /* 5. Improve text rendering */
     -webkit-font-smoothing: antialiased;
 }
 
-/* 6. Improve media defaults */
 img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
 }
 
-/* 7. Inherit fonts for form controls */
 input, button, textarea, select {
     font: inherit;
 }
 
-/* 8. Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 
-/* 9. Improve line wrapping */
 p {
     text-wrap: pretty;
 }
@@ -47,9 +38,6 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 
-/*
-  10. Create a root stacking context
-*/
 #root, #__next {
     isolation: isolate;
 }
@@ -57,59 +45,129 @@ h1, h2, h3, h4, h5, h6 {
 :root {
     --primary-color: #4a90e2;
     --text-color: #333;
-    --emphasis: bold;
+    --emphasis: italic;
     --white-color: #fff;
-    --black-color: #000;
     --signin-blue: #4d6ef4;
     --bottom-blue:#2178c8;
     --top-blue: #4da8f5;
     --gray-text-color: #979797;
+    --gray-boarder-color: #dfe4e7;
     --forgot-password-blue: #6ba8e3;
 
     --font-body: ui-sans-serif, system-ui, -apple-system, "SF Pro Text",
     "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
-    --font-weight-regular: 400;
-    --font-weight-medium:  600;
-    --font-weight-bold:    700;
+    --font-hero: ui-sans-serif, system-ui, -apple-system, "SF Pro Display",
+    "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+    --fw-regular: 400;
+    --fw-bold:    700;
+    --fw-extrabold: 800;
+    --ls-tight: -0.02em;
 }
 
-body { font-family: var(--font-body); }
+body {
+    font-family: var(--font-body);
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 10px;
+    grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
+    width: 100%;
 }
 
-.login-info {
+#login-info {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(180deg, var(--top-blue), var(--bottom-blue));
     padding: 20px;
-    text-align: center;
-}
-
-.login-form {
-    background-color: #fff;
-    font-family: var(--font-body);
-    padding: 20px;
     text-align: left;
+    justify-content: center;
 }
 
 h1 {
-    color: white;
-    font-size: 4rem;
-    text-align: left;
-}
-
-form-field {
-    display: block;
-    text-align: left;
+    font-family: var(--font-hero);
+    font-weight: var(--fw-extrabold);
+    letter-spacing: var(--ls-tight);
+    color: var(--white-color);
+    font-size: 3rem;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
 }
 
 span {
-    text-emphasis: blueviolet;
+    font-style: var(--emphasis);
+    font-weight: var(--fw-extrabold);
 }
 
 p {
     font-size: 20px;
     text-align: left;
+    color: var(--white-color)
 }
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    background: var(--white-color);
+    padding: 24px;
+    text-align: left;
+    font-family: var(--font-body);
+    justify-content: center;
+}
+
+form-field {
+    display: block;
+    margin-bottom: 16px;
+}
+
+form-field:last-of-type {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+label {
+    display: block;
+    font-weight: var(--fw-bold);
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    color: var(--text-color);
+    background: var(--white-color);
+    padding: 14px 14px;
+    border: 1px solid var(--gray-boarder-color);
+    border-radius: 8px;
+}
+
+Button {
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--signin-blue);
+    color: var(--white-color);
+    font-weight: var(--fw-bold);
+}
+/* changes color when you hover */
+Button:hover {
+    background: var(--bottom-blue);
+}
+
+password-recovery a {
+    color: var(--forgot-password-blue);
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+}
+/* so its clear the user is clicking */
+password-recovery a:hover { text-decoration: underline; }
