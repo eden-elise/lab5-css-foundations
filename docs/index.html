@@ -18,6 +18,7 @@
             </p>
     </section>
     <section id="login-form">
+        <h2 class="sr-only">Sign in</h2> <!-- so it validates cleanly-->
         <form action="login.php" method="post"> <!-- mostly gonna chose post -->
             <form-field>
                 <label for="emailField" >Email address</label>
@@ -37,7 +38,7 @@
                 </button>
                 <password-recovery>
                     <a href="forgot.php">
-                        Forgot Password?
+                        Forgot password?
                     </a>
                 </password-recovery>
             </form-field>

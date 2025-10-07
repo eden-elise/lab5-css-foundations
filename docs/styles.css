@@ -82,10 +82,16 @@ html {
     height: 100%;
 }
 
+.sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    min-height: 100dvh;;
+    min-height: 100dvh;
+    min-height: 100vh; /* safari didn't recognise dvh */
     width: 100%;
 }
 
@@ -157,20 +163,28 @@ input[type="password"] {
     padding: 0.875rem 0.875rem;
     border: 1px solid var(--gray-border-color);
     border-radius: var(--radius-sm);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 Button {
     padding: 0.75rem 1.375rem;
     border: 0;
-    border-radius: 0.75rem 1.375rem;
+    border-radius: var(--radius-sm);
     background: var(--signin-blue);
     color: var(--white-color);
     font-weight: var(--fw-bold);
+    transition: /* for clarity that button is being pressed */
+            background-color 200ms cubic-bezier(.2,.6,.2,1),
+            box-shadow 200ms cubic-bezier(.2,.6,.2,1),
+            transform 80ms cubic-bezier(.2,.6,.2,1);
 }
+
 /* changes color when you hover */
 Button:hover {
     background: var(--bottom-blue);
 }
+
+Button:active { transform: translateY(1px); }
 
 password-recovery a {
     color: var(--forgot-password-blue);
