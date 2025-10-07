@@ -107,10 +107,3 @@ button {
 - **Custom elements (`<form-field>`, `<password-recovery>`)**  
 
 ---
-
-## Deploy (GitHub Pages)
-
-1. Push the repo to GitHub.  
-2. **Settings → Pages** → Source: *Deploy from a branch* → Branch: `main` (or choose `/docs` folder).  
-3. Save and wait for deployment to finish.  
-4. Update the **Live site** link at the top of this README.
